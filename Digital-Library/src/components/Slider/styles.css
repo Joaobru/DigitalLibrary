@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  overflow: hidden;
+}
+
+.item {
+  position: relative;
+  display: block;
+  flex: 1 1 0px;
+  transition: transform 500ms;
+  margin-bottom: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visibled {
+  display: block;
+}
+
+.item img {
+  display: block;
+  width:200px;
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 4px;
+}
+.container:focus-within .item,
+.container:hover .item {
+  transform: translateX(-25%);
+}
+
+.item:focus ~ .item,
+.item:hover ~ .item {
+  transform: translateX(25%);
+}
+
+.container .item:focus,
+.container .item:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+.item img {
+  display: block;
+  max-width: 100%;
+}
+
+.left {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  margin-top: 50px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  margin-top: 50px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
